@@ -33,8 +33,10 @@ export default class ViewBase{
         this.cellHeight = this.canvasHeight / this.height;
     }
 
-    update(){
+    update(base){
         this.clearField();
+        
+        this.drawFloor(base.floorsArray);
         
         this.drawGrid();
     }
@@ -63,5 +65,17 @@ export default class ViewBase{
         }
 
         this.context.stroke();
+    }
+
+    drawFloor(floorArray){
+        this.context.fillStyle = '#ffa500'; // добавить переменную
+
+        for(let i = 0; i < floorArray.length; i++){
+            for(let j = 0; j < floorArray[i].length; j++){
+                if(floorArray[i][j].floorType){
+                    this.context.fillRect(j * this.cellWidth, i * this.cellHeight, this.cellWidth, this.cellHeight);
+                }
+            }
+        }
     }
 }

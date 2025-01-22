@@ -1,13 +1,19 @@
 export default class Pickup{
-    x;
-    y;
-    width;
-    height;
+    xStart;
+    yStart;
+    xEnd;
+    yEnd;
     isHaveInfo;
     cellsArray;
     cellsCount;
     
-    constructor(x, y, width, height){
-
+    constructor(xStart = 13, yStart = 14, xEnd = 16, yEnd = 18, isHaveInfo = false, cellsCount = 10, cellsArray){
+        this.xStart = xStart;
+        this.yStart = yStart;
+        this.xEnd = xEnd;
+        this.yEnd = yEnd;
+        this.isHaveInfo = isHaveInfo;
+        this.cellsCount = cellsCount;
+        this.cellsArray = cellsArray;
     }
 }

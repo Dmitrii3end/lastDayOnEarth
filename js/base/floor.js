@@ -4,4 +4,8 @@ export default class Floor{
     constructor(floorType = 0){
         this.floorType = floorType;
     }
+
+    changeFloor(type){
+        this.floorType = this.floorType == type ? 0 : type;
+    }
 }
